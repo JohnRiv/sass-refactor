@@ -1,9 +1,1 @@
 $ compass csscss -v
-
-{.wrapper.is-error-screen:after, .content.error:after} AND {.wrapper:before, .content.error:before} share 6 declarations
-  - content: ''
-  - height: 100%
-  - left: 0
-  - position: absolute
-  - top: 0
-  - width: 100%
