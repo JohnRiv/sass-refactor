@@ -1,0 +1,1 @@
+To view the refactor steps, view the history of the [refactor](https://github.com/JohnRiv/sass-refactor/commits/refactor) branch in reverse

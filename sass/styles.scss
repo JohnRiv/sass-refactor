@@ -1,0 +1,154 @@
+@import 'compass';
+
+// Variables
+
+$red: #f00;
+$blue: #00f;
+$black: #000;
+$grey: #999;
+$white: #fff;
+
+// Mixins
+
+@mixin btn-action {
+  color: $white;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 30px;
+  line-height: normal;
+}
+
+@mixin btn-action-enabled {
+  @include btn-action;
+  cursor: pointer;
+  pointer-events: auto;
+
+  &:hover, &:focus {
+    color: $blue;
+  }
+}
+
+@mixin btn-action-disabled {
+  @include btn-action;
+  cursor: default;
+  pointer-events: none;
+  color: $grey;
+
+  &:hover, &:focus {
+    color: $grey;
+  }
+}
+
+@mixin overlay($z-index) {
+  z-index: $z-index;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($grey, .3);
+}
+
+// Styles
+
+.wrapper {
+
+  &:before {
+    @include overlay(3020);
+  }
+
+  &.is-error-screen {
+
+    &:after {
+      z-index: 3010;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      @include background-image(radial-gradient(center center, circle cover, rgba(darken($red, 20), 0.6) 0%, rgba($black, 0.3) 85%, rgba($black, 0.3) 100%));
+    }
+  }
+}
+
+.content {
+
+  &.error {
+
+    &:before {
+      @include overlay(3020);
+    }
+
+    &:after {
+      z-index: 3010;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      @include background-image(radial-gradient(center center, circle cover, rgba(darken($red, 20), 0.6) 0%, rgba($black, 0.3) 85%, rgba($black, 0.3) 100%));
+    }
+
+  }
+
+  &.is-validating .btn-submit {
+    @include btn-action-disabled;
+  }
+
+  &.has-errors .btn-submit {
+    @include btn-action-disabled;
+  }
+
+  &.is-successful .btn-submit {
+    @include btn-action-enabled;
+  }
+}
+
+.btn-action {
+  display: inline-block;
+  text-decoration: none;
+  @include btn-action-disabled;
+
+  .is-successful & {
+    @include btn-action-enabled;
+  }
+}
+
+.input-icon-error {
+  color: $red;
+  @include opacity(0);
+  @include single-transition(opacity, 0.2s, ease-out, 0s);
+
+  .has-errors & {
+    @include opacity(1);
+    @include single-transition(opacity, 0.2s, ease-out, 0s);
+  }
+
+  .has-first-field-error & {
+    @include opacity(1);
+    @include single-transition(opacity, 0.2s, ease-out, 0s);
+
+    + .input-icon-error {
+      @include opacity(0);
+      @include single-transition(opacity, 0.2s, ease-out, 0s);
+    }
+  }
+
+  .has-second-field-error & {
+    @include opacity(1);
+    @include single-transition(opacity, 0.2s, ease-out, 0s);
+
+    + .input-icon-error {
+      @include opacity(1);
+      @include single-transition(opacity, 0.2s, ease-out, 0s);
+    }
+  }
+
+  &:nth-of-type(1) {
+    .has-second-field-error & {
+    @include opacity(0);
+    }
+  }
+}
