@@ -58,6 +58,12 @@ $white: #fff;
   @include background-image(radial-gradient(center center, circle cover, rgba(darken($red, 20), 0.6) 0%, rgba($black, 0.3) 85%, rgba($black, 0.3) 100%));
 }
 
+@mixin icon-transition($state) {
+  $opacity: if($state == 'show', 1, 0);
+  @include opacity($opacity);
+  @include single-transition(opacity, 0.2s, ease-out, 0s);
+}
+
 // Styles
 
 .wrapper {
@@ -113,31 +119,25 @@ $white: #fff;
 
 .input-icon-error {
   color: $red;
-  @include opacity(0);
-  @include single-transition(opacity, 0.2s, ease-out, 0s);
+  @include icon-transition('hide');
 
   .has-errors & {
-    @include opacity(1);
-    @include single-transition(opacity, 0.2s, ease-out, 0s);
+    @include icon-transition('show');
   }
 
   .has-first-field-error & {
-    @include opacity(1);
-    @include single-transition(opacity, 0.2s, ease-out, 0s);
+    @include icon-transition('show');
 
     + .input-icon-error {
-      @include opacity(0);
-      @include single-transition(opacity, 0.2s, ease-out, 0s);
+      @include icon-transition('hide');
     }
   }
 
   .has-second-field-error & {
-    @include opacity(1);
-    @include single-transition(opacity, 0.2s, ease-out, 0s);
+    @include icon-transition('show');
 
     + .input-icon-error {
-      @include opacity(1);
-      @include single-transition(opacity, 0.2s, ease-out, 0s);
+      @include icon-transition('show');
     }
   }
 
