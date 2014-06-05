@@ -1,41 +1,5 @@
 $ compass csscss -v
 
-{.content.error:after} AND {.wrapper.is-error-screen:after} share 10 declarations
-  - background-image: radial-gradient(center center, circle cover, rgba(153, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 85%, rgba(0, 0, 0, 0.3) 100%)
-  - background-image: -webkit-radial-gradient(center center, circle cover, rgba(153, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 85%, rgba(0, 0, 0, 0.3) 100%)
-  - background-image: -moz-radial-gradient(center center, circle cover, rgba(153, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 85%, rgba(0, 0, 0, 0.3) 100%)
-  - content: ''
-  - height: 100%
-  - left: 0
-  - position: absolute
-  - top: 0
-  - width: 100%
-  - z-index: 3010
-{.content.error:before} AND {.wrapper:before} share 8 declarations
-  - background-color: rgba(153, 153, 153, 0.3)
-  - content: ''
-  - height: 100%
-  - left: 0
-  - position: absolute
-  - top: 0
-  - width: 100%
-  - z-index: 3020
-{.btn-action}, {.content.has-errors .btn-submit} AND {.content.is-validating .btn-submit} share 7 declarations
-  - color: white
-  - color: #999999
-  - cursor: default
-  - font-family: helvetica, arial, sans-serif
-  - font-size: 30px
-  - line-height: normal
-  - pointer-events: none
-{.has-first-field-error .input-icon-error + .input-icon-error} AND {.input-icon-error} share 7 declarations
-  - -moz-transition: opacity 0.2s ease-out 0s
-  - -o-transition: opacity 0.2s ease-out 0s
-  - -webkit-transition: opacity 0.2s ease-out
-  - -webkit-transition-delay: 0s
-  - filter: progid:dximagetransform.microsoft.alpha(opacity=0)
-  - opacity: 0
-  - transition: opacity 0.2s ease-out 0s
 {.has-errors .input-icon-error}, {.has-first-field-error .input-icon-error}, {.has-second-field-error .input-icon-error} AND {.has-second-field-error .input-icon-error + .input-icon-error} share 7 declarations
   - -moz-transition: opacity 0.2s ease-out 0s
   - -o-transition: opacity 0.2s ease-out 0s
@@ -44,14 +8,15 @@ $ compass csscss -v
   - filter: progid:dximagetransform.microsoft.alpha(enabled=false)
   - opacity: 1
   - transition: opacity 0.2s ease-out 0s
-{.content.is-successful .btn-submit} AND {.is-successful .btn-action} share 6 declarations
-  - color: white
-  - cursor: pointer
-  - font-family: helvetica, arial, sans-serif
-  - font-size: 30px
-  - line-height: normal
-  - pointer-events: auto
-{.content.error:after}, {.content.error:before}, {.wrapper.is-error-screen:after} AND {.wrapper:before} share 6 declarations
+{.has-first-field-error .input-icon-error + .input-icon-error} AND {.input-icon-error} share 7 declarations
+  - -moz-transition: opacity 0.2s ease-out 0s
+  - -o-transition: opacity 0.2s ease-out 0s
+  - -webkit-transition: opacity 0.2s ease-out
+  - -webkit-transition-delay: 0s
+  - filter: progid:dximagetransform.microsoft.alpha(opacity=0)
+  - opacity: 0
+  - transition: opacity 0.2s ease-out 0s
+{.wrapper.is-error-screen:after, .content.error:after} AND {.wrapper:before, .content.error:before} share 6 declarations
   - content: ''
   - height: 100%
   - left: 0
@@ -64,7 +29,7 @@ $ compass csscss -v
   - -webkit-transition: opacity 0.2s ease-out
   - -webkit-transition-delay: 0s
   - transition: opacity 0.2s ease-out 0s
-{.btn-action}, {.content.has-errors .btn-submit}, {.content.is-successful .btn-submit}, {.content.is-validating .btn-submit} AND {.is-successful .btn-action} share 4 declarations
+{.content.is-successful .btn-submit, .is-successful .btn-action} AND {.content.is-validating .btn-submit, .content.has-errors .btn-submit, .btn-action} share 4 declarations
   - color: white
   - font-family: helvetica, arial, sans-serif
   - font-size: 30px

@@ -1,82 +1,5 @@
-/* line 71, ../sass/styles.scss */
-.wrapper:before {
-  z-index: 3020;
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(153, 153, 153, 0.3);
-}
-/* line 77, ../sass/styles.scss */
-.wrapper.is-error-screen:after {
-  z-index: 3010;
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: -moz-radial-gradient(center center, circle cover, rgba(153, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 85%, rgba(0, 0, 0, 0.3) 100%);
-  background-image: -webkit-radial-gradient(center center, circle cover, rgba(153, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 85%, rgba(0, 0, 0, 0.3) 100%);
-  background-image: radial-gradient(center center, circle cover, rgba(153, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 85%, rgba(0, 0, 0, 0.3) 100%);
-}
-
-/* line 87, ../sass/styles.scss */
-.content.error:before {
-  z-index: 3020;
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(153, 153, 153, 0.3);
-}
-/* line 91, ../sass/styles.scss */
-.content.error:after {
-  z-index: 3010;
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: -moz-radial-gradient(center center, circle cover, rgba(153, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 85%, rgba(0, 0, 0, 0.3) 100%);
-  background-image: -webkit-radial-gradient(center center, circle cover, rgba(153, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 85%, rgba(0, 0, 0, 0.3) 100%);
-  background-image: radial-gradient(center center, circle cover, rgba(153, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 85%, rgba(0, 0, 0, 0.3) 100%);
-}
-/* line 97, ../sass/styles.scss */
-.content.is-validating .btn-submit {
-  color: white;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 30px;
-  line-height: normal;
-  cursor: default;
-  pointer-events: none;
-  color: #999999;
-}
-/* line 36, ../sass/styles.scss */
-.content.is-validating .btn-submit:hover, .content.is-validating .btn-submit:focus {
-  color: #999999;
-}
-/* line 101, ../sass/styles.scss */
-.content.has-errors .btn-submit {
-  color: white;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 30px;
-  line-height: normal;
-  cursor: default;
-  pointer-events: none;
-  color: #999999;
-}
-/* line 36, ../sass/styles.scss */
-.content.has-errors .btn-submit:hover, .content.has-errors .btn-submit:focus {
-  color: #999999;
-}
-/* line 105, ../sass/styles.scss */
-.content.is-successful .btn-submit {
+/* line 20, ../sass/styles.scss */
+.content.is-successful .btn-submit, .is-successful .btn-action {
   color: white;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 30px;
@@ -85,38 +8,55 @@
   pointer-events: auto;
 }
 /* line 25, ../sass/styles.scss */
-.content.is-successful .btn-submit:hover, .content.is-successful .btn-submit:focus {
+.content.is-successful .btn-submit:hover, .is-successful .btn-action:hover, .content.is-successful .btn-submit:focus, .is-successful .btn-action:focus {
   color: blue;
+}
+
+/* line 30, ../sass/styles.scss */
+.content.is-validating .btn-submit, .content.has-errors .btn-submit, .btn-action {
+  color: white;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 30px;
+  line-height: normal;
+  cursor: default;
+  pointer-events: none;
+  color: #999999;
+}
+/* line 36, ../sass/styles.scss */
+.content.is-validating .btn-submit:hover, .content.has-errors .btn-submit:hover, .btn-action:hover, .content.is-validating .btn-submit:focus, .content.has-errors .btn-submit:focus, .btn-action:focus {
+  color: #999999;
+}
+
+/* line 51, ../sass/styles.scss */
+.wrapper:before, .content.error:before {
+  z-index: 3020;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(153, 153, 153, 0.3);
+}
+
+/* line 56, ../sass/styles.scss */
+.wrapper.is-error-screen:after, .content.error:after {
+  z-index: 3010;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: -moz-radial-gradient(center center, circle cover, rgba(153, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 85%, rgba(0, 0, 0, 0.3) 100%);
+  background-image: -webkit-radial-gradient(center center, circle cover, rgba(153, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 85%, rgba(0, 0, 0, 0.3) 100%);
+  background-image: radial-gradient(center center, circle cover, rgba(153, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 85%, rgba(0, 0, 0, 0.3) 100%);
 }
 
 /* line 110, ../sass/styles.scss */
 .btn-action {
   display: inline-block;
   text-decoration: none;
-  color: white;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 30px;
-  line-height: normal;
-  cursor: default;
-  pointer-events: none;
-  color: #999999;
-}
-/* line 36, ../sass/styles.scss */
-.btn-action:hover, .btn-action:focus {
-  color: #999999;
-}
-/* line 115, ../sass/styles.scss */
-.is-successful .btn-action {
-  color: white;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 30px;
-  line-height: normal;
-  cursor: pointer;
-  pointer-events: auto;
-}
-/* line 25, ../sass/styles.scss */
-.is-successful .btn-action:hover, .is-successful .btn-action:focus {
-  color: blue;
 }
 
 /* line 120, ../sass/styles.scss */

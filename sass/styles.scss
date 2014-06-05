@@ -8,7 +8,7 @@ $black: #000;
 $grey: #999;
 $white: #fff;
 
-// Mixins
+// Mixins & Placeholders
 
 @mixin btn-action {
   color: $white;
@@ -17,7 +17,7 @@ $white: #fff;
   line-height: normal;
 }
 
-@mixin btn-action-enabled {
+%btn-action-enabled {
   @include btn-action;
   cursor: pointer;
   pointer-events: auto;
@@ -27,7 +27,7 @@ $white: #fff;
   }
 }
 
-@mixin btn-action-disabled {
+%btn-action-disabled {
   @include btn-action;
   cursor: default;
   pointer-events: none;
@@ -48,13 +48,13 @@ $white: #fff;
   height: 100%;
 }
 
-@mixin overlay-base($z-index) {
-  @include overlay($z-index);
+%overlay-base {
+  @include overlay(3020);
   background-color: rgba($grey, .3);
 }
 
-@mixin overlay-error($z-index) {
-  @include overlay($z-index);
+%overlay-error {
+  @include overlay(3010);
   @include background-image(radial-gradient(center center, circle cover, rgba(darken($red, 20), 0.6) 0%, rgba($black, 0.3) 85%, rgba($black, 0.3) 100%));
 }
 
@@ -69,13 +69,13 @@ $white: #fff;
 .wrapper {
 
   &:before {
-    @include overlay-base(3020);
+    @extend %overlay-base;
   }
 
   &.is-error-screen {
 
     &:after {
-      @include overlay-error(3010);
+      @extend %overlay-error;
     }
   }
 }
@@ -85,35 +85,35 @@ $white: #fff;
   &.error {
 
     &:before {
-      @include overlay-base(3020);
+      @extend %overlay-base;
     }
 
     &:after {
-      @include overlay-error(3010);
+      @extend %overlay-error;
     }
 
   }
 
   &.is-validating .btn-submit {
-    @include btn-action-disabled;
+    @extend %btn-action-disabled;
   }
 
   &.has-errors .btn-submit {
-    @include btn-action-disabled;
+    @extend %btn-action-disabled;
   }
 
   &.is-successful .btn-submit {
-    @include btn-action-enabled;
+    @extend %btn-action-enabled;
   }
 }
 
 .btn-action {
   display: inline-block;
   text-decoration: none;
-  @include btn-action-disabled;
+  @extend %btn-action-disabled;
 
   .is-successful & {
-    @include btn-action-enabled;
+    @extend %btn-action-enabled;
   }
 }
 
