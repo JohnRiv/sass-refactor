@@ -10,7 +10,7 @@ $white: #fff;
 
 // Mixins & Placeholders
 
-@mixin btn-action {
+%btn-action {
   color: $white;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 30px;
@@ -18,7 +18,7 @@ $white: #fff;
 }
 
 %btn-action-enabled {
-  @include btn-action;
+  @extend %btn-action;
   cursor: pointer;
   pointer-events: auto;
 
@@ -28,7 +28,7 @@ $white: #fff;
 }
 
 %btn-action-disabled {
-  @include btn-action;
+  @extend %btn-action;
   cursor: default;
   pointer-events: none;
   color: $grey;

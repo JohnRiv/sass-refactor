@@ -29,8 +29,3 @@ $ compass csscss -v
   - -webkit-transition: opacity 0.2s ease-out
   - -webkit-transition-delay: 0s
   - transition: opacity 0.2s ease-out 0s
-{.content.is-successful .btn-submit, .is-successful .btn-action} AND {.content.is-validating .btn-submit, .content.has-errors .btn-submit, .btn-action} share 4 declarations
-  - color: white
-  - font-family: helvetica, arial, sans-serif
-  - font-size: 30px
-  - line-height: normal
