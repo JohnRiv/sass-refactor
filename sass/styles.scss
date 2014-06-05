@@ -58,10 +58,12 @@ $white: #fff;
   @include background-image(radial-gradient(center center, circle cover, rgba(darken($red, 20), 0.6) 0%, rgba($black, 0.3) 85%, rgba($black, 0.3) 100%));
 }
 
-@mixin icon-transition($state) {
-  $opacity: if($state == 'show', 1, 0);
-  @include opacity($opacity);
-  @include single-transition(opacity, 0.2s, ease-out, 0s);
+%show {
+  @include opacity(1);
+}
+
+%hide {
+  @include opacity(0);
 }
 
 // Styles
@@ -119,31 +121,35 @@ $white: #fff;
 
 .input-icon-error {
   color: $red;
-  @include icon-transition('hide');
+  @extend %hide;
+  @include single-transition(opacity, 0.2s, ease-out, 0s);
+}
+
+.input-icon-error {
 
   .has-errors & {
-    @include icon-transition('show');
+    @extend %show;
   }
 
   .has-first-field-error & {
-    @include icon-transition('show');
+    @extend %show;
 
     + .input-icon-error {
-      @include icon-transition('hide');
+      @extend %hide;
     }
   }
 
   .has-second-field-error & {
-    @include icon-transition('show');
+    @extend %show;
 
     + .input-icon-error {
-      @include icon-transition('show');
+      @extend %show;
     }
   }
 
   &:nth-of-type(1) {
     .has-second-field-error & {
-    @include opacity(0);
+      @extend %hide;
     }
   }
 }

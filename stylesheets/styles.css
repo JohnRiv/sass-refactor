@@ -53,75 +53,30 @@
   background-image: radial-gradient(center center, circle cover, rgba(153, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 85%, rgba(0, 0, 0, 0.3) 100%);
 }
 
-/* line 110, ../sass/styles.scss */
+/* line 61, ../sass/styles.scss */
+.has-errors .input-icon-error, .has-first-field-error .input-icon-error, .has-second-field-error .input-icon-error, .has-second-field-error .input-icon-error + .input-icon-error {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+
+/* line 65, ../sass/styles.scss */
+.input-icon-error, .has-first-field-error .input-icon-error + .input-icon-error, .has-second-field-error .input-icon-error:nth-of-type(1) {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+
+/* line 112, ../sass/styles.scss */
 .btn-action {
   display: inline-block;
   text-decoration: none;
 }
 
-/* line 120, ../sass/styles.scss */
+/* line 122, ../sass/styles.scss */
 .input-icon-error {
   color: red;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-  opacity: 0;
   -moz-transition: opacity 0.2s ease-out 0s;
   -o-transition: opacity 0.2s ease-out 0s;
   -webkit-transition: opacity 0.2s ease-out;
   -webkit-transition-delay: 0s;
   transition: opacity 0.2s ease-out 0s;
-}
-/* line 124, ../sass/styles.scss */
-.has-errors .input-icon-error {
-  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
-  opacity: 1;
-  -moz-transition: opacity 0.2s ease-out 0s;
-  -o-transition: opacity 0.2s ease-out 0s;
-  -webkit-transition: opacity 0.2s ease-out;
-  -webkit-transition-delay: 0s;
-  transition: opacity 0.2s ease-out 0s;
-}
-/* line 128, ../sass/styles.scss */
-.has-first-field-error .input-icon-error {
-  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
-  opacity: 1;
-  -moz-transition: opacity 0.2s ease-out 0s;
-  -o-transition: opacity 0.2s ease-out 0s;
-  -webkit-transition: opacity 0.2s ease-out;
-  -webkit-transition-delay: 0s;
-  transition: opacity 0.2s ease-out 0s;
-}
-/* line 131, ../sass/styles.scss */
-.has-first-field-error .input-icon-error + .input-icon-error {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-  opacity: 0;
-  -moz-transition: opacity 0.2s ease-out 0s;
-  -o-transition: opacity 0.2s ease-out 0s;
-  -webkit-transition: opacity 0.2s ease-out;
-  -webkit-transition-delay: 0s;
-  transition: opacity 0.2s ease-out 0s;
-}
-/* line 136, ../sass/styles.scss */
-.has-second-field-error .input-icon-error {
-  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
-  opacity: 1;
-  -moz-transition: opacity 0.2s ease-out 0s;
-  -o-transition: opacity 0.2s ease-out 0s;
-  -webkit-transition: opacity 0.2s ease-out;
-  -webkit-transition-delay: 0s;
-  transition: opacity 0.2s ease-out 0s;
-}
-/* line 139, ../sass/styles.scss */
-.has-second-field-error .input-icon-error + .input-icon-error {
-  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
-  opacity: 1;
-  -moz-transition: opacity 0.2s ease-out 0s;
-  -o-transition: opacity 0.2s ease-out 0s;
-  -webkit-transition: opacity 0.2s ease-out;
-  -webkit-transition-delay: 0s;
-  transition: opacity 0.2s ease-out 0s;
-}
-/* line 145, ../sass/styles.scss */
-.has-second-field-error .input-icon-error:nth-of-type(1) {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-  opacity: 0;
 }

@@ -1,21 +1,5 @@
 $ compass csscss -v
 
-{.has-errors .input-icon-error}, {.has-first-field-error .input-icon-error}, {.has-second-field-error .input-icon-error} AND {.has-second-field-error .input-icon-error + .input-icon-error} share 7 declarations
-  - -moz-transition: opacity 0.2s ease-out 0s
-  - -o-transition: opacity 0.2s ease-out 0s
-  - -webkit-transition: opacity 0.2s ease-out
-  - -webkit-transition-delay: 0s
-  - filter: progid:dximagetransform.microsoft.alpha(enabled=false)
-  - opacity: 1
-  - transition: opacity 0.2s ease-out 0s
-{.has-first-field-error .input-icon-error + .input-icon-error} AND {.input-icon-error} share 7 declarations
-  - -moz-transition: opacity 0.2s ease-out 0s
-  - -o-transition: opacity 0.2s ease-out 0s
-  - -webkit-transition: opacity 0.2s ease-out
-  - -webkit-transition-delay: 0s
-  - filter: progid:dximagetransform.microsoft.alpha(opacity=0)
-  - opacity: 0
-  - transition: opacity 0.2s ease-out 0s
 {.wrapper.is-error-screen:after, .content.error:after} AND {.wrapper:before, .content.error:before} share 6 declarations
   - content: ''
   - height: 100%
@@ -23,9 +7,3 @@ $ compass csscss -v
   - position: absolute
   - top: 0
   - width: 100%
-{.has-errors .input-icon-error}, {.has-first-field-error .input-icon-error}, {.has-first-field-error .input-icon-error + .input-icon-error}, {.has-second-field-error .input-icon-error}, {.has-second-field-error .input-icon-error + .input-icon-error} AND {.input-icon-error} share 5 declarations
-  - -moz-transition: opacity 0.2s ease-out 0s
-  - -o-transition: opacity 0.2s ease-out 0s
-  - -webkit-transition: opacity 0.2s ease-out
-  - -webkit-transition-delay: 0s
-  - transition: opacity 0.2s ease-out 0s
